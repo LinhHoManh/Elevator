@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script src ="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+        AFRAME.registerComponent('scene-manager',{
+            init:function () {
+                let notification = document.querySelector('#notification');
+                let seconds = 30;
+                let countdown = setInterval(function () {
+                    notification.setAttribute('value',`Door will be closed in ${seconds} seconds`)
+                    if(seconds===0){
+                        notification.setAttribute('value',`Attention ! Door is closing`);
+                        $("#closingdoor").trigger("play");
+
+                        clearInterval(countdown)
+                    }
+                    seconds = seconds-1;
+
+                },1000);
+
+
+                let closeDoor = document.querySelector('#doorClose');
+                closeDoor.addEventListener("click",function () {
+                    clearInterval(countdown);
+                    notification.setAttribute('value',`Attention ! Door is closing`);
+                    $("#closingdoor").trigger("play");
+                })
+            }
+        });
+        AFRAME.registerComponent('cursor-listener', {
+            init: function () {
+                let onOff = true;
+                let currentId = this.el.getAttribute("id");
+                let self = this;
+                this.el.addEventListener('click', function (evt) {
+                    let color = onOff===true?"orange":"gray"
+                    this.setAttribute('material', 'color', color);
+                    onOff = !onOff;
+                    if(currentId!=="doorClose" && currentId!=="doorOpen"){
+                        let help = document.querySelector('#help');
+                        if(currentId==='help'){
+                            $("#ahelp").trigger("play");
+                           help.setAttribute('visible','true');
+                            this.setAttribute('material', 'color', 'gray');
+                            onOff = !onOff;
+
+                        }
+                        if(currentId==='home'){
+                            $("#ahome").trigger("play");
+                            help.setAttribute('visible','false')
+                            this.setAttribute('material', 'color', 'gray');
+                            let btnHelp = document.querySelector('#help');
+                            btnHelp.setAttribute('material', 'color', 'gray');
+                        }
+                        if(currentId==='floor4'){
+                                let timeout = setTimeout(function () {
+                                    let notification = document.querySelector('#notification');
+                                    notification.setAttribute('value',`Proceeding to the 4th floor !`);
+                                    $("#4thfloor").trigger("play");
+                                },3000)
+                        }
+
+
+
+                    }
+                    else{
+                        if(currentId==="doorClose"){
+                            let doorOpen = document.querySelector("#doorOpen");
+                            doorOpen.setAttribute('material', 'color', 'gray');
+                            let door = document.querySelector("#Elevator");
+                            door.setAttribute('animation',"property: scale; to: 0.05 4 6.5; dur: 3000")
+                            door.addEventListener('animationcomplete',function () {
+                                self.el.setAttribute('material', 'color', 'gray');
+                                let notification = document.querySelector('#notification');
+                                notification.setAttribute('value',`Please select a destination`);
+                                $("#destination").trigger("play");
+                                onOff = !onOff;
+                            })
+                        }
+                        if(currentId==="doorOpen"){
+                            let door = document.querySelector("#Elevator");
+                            let doorClose = document.querySelector("#doorClose");
+                            doorClose.setAttribute('material', 'color', 'gray');
+                            door.setAttribute('animation',"property: scale; to: 0.05 4 1; dur: 3000")
+                        }
+                    }
+
+                });
+            }
+        });
+
+    </script>
+</head>
+<body>
+<a-scene scene-manager>
+    <a-assets>
+        <canvas id="canvasObj" crossorigin="anonymous" webkit-playsinline=""></canvas>
+        <img id="cpanel" src="assets/images/controlPanel.png">
+        <img id="helpPanel" src="assets/images/helpPanel.png">
+        <a-asset-item id="iconfont" src="assets/fonts/ionicons.ttf"></a-asset-item>
+        <a-asset-item id="roomObj" src="models/office.obj"></a-asset-item>
+        <a-asset-item id="roomMtl" src="models/office.mtl"></a-asset-item>
+        <audio id="closingdoor" src="assets/audio/doorclosing.mp3" class="audio-play"  preload="auto">
+        </audio>
+        <audio id="destination" src="assets/audio/destination.mp3" class="audio-play"  preload="auto">
+        </audio>
+        <audio id="4thfloor" src="assets/audio/4floor.mp3" class="audio-play"  preload="auto">
+        </audio>
+        <audio id="ahelp" src="assets/audio/ahelp.mp3" class="audio-play"  preload="auto">
+        </audio>
+        <audio id="ahome" src="assets/audio/ahome.mp3" class="audio-play"  preload="auto">
+        </audio>
+    </a-assets>
+    <a-sky color="#ECECEC"></a-sky>
+
+    <a-entity id="cameraRig" position="24 1.6 -9" rotation = "0 90 0">
+        <a-camera look-controls wasd-controls="acceleration:200" position="0 0 0" >
+            <a-gui-cursor id="cursor"
+                          raycaster="objects: .clickable"
+                          fuse="true" fuse-timeout="2000"
+                          design="cross" > <!-- dot, ring, reticle, cross  -->
+            </a-gui-cursor> <!-- /cursor -->
+        </a-camera> <!-- /camera -->
+    </a-entity>
+
+
+    <a-entity id="room" obj-model="obj:#roomObj;  mtl:#roomMtl" position="0 -1 0" ></a-entity>
+    <a-image   width="0.85px" height="1.2px" src="#cpanel" position="22.2 1.2 -9.2" rotation="0 90 0"></a-image>
+    <a-image id="help" visible="false"   width="0.85px" height="1.2px" src="#helpPanel" position="22.3 1.2 -9.2" rotation="0 90 0"></a-image>
+    <a-text id="notification" value="Door will be closed in 10 seconds" height="1.2" width="1.2" position="22.2 1.73 -8.8" rotation="0 90 0"></a-text>
+    <a-entity id="basement" selected="false" class="clickable" cursor-listener position="22.15 1 -9.2" geometry="primitive: box" scale="0.05 0.145 0.145" material="color: gray"></a-entity>
+    <a-entity id="floor1" selected="false" class="clickable" cursor-listener position="22.15 1.16 -9.2" geometry="primitive: box" scale="0.05 0.145 0.145" material="color: gray"></a-entity>
+    <a-entity id="floor2" selected="false" class="clickable" cursor-listener position="22.15 1.31 -9.2" geometry="primitive: box" scale="0.05 0.145 0.145" material="color: gray"></a-entity>
+    <a-entity id="floor3" selected="false" class="clickable" cursor-listener position="22.15 1.46 -9.2" geometry="primitive: box" scale="0.05 0.145 0.145" material="color: gray"></a-entity>
+    <a-entity id="floor4" selected="false" class="clickable" cursor-listener position="22.15 1.61 -9.2" geometry="primitive: box" scale="0.05 0.145 0.145" material="color: gray"></a-entity>
+    <a-entity id="help"  selected="false" class="clickable" cursor-listener position="22.15 1.61 -9.56" geometry="primitive: box" scale="0.05 0.145 0.145" material="color: gray"></a-entity>
+    <a-entity id="home" selected="false" class="clickable" cursor-listener position="22.15 1.61 -8.86" geometry="primitive: box" scale="0.05 0.145 0.145" material="color: gray"></a-entity>
+    <a-entity id="doorOpen"  class="clickable" cursor-listener position="22.15 1 -8.91" geometry="primitive: box" scale="0.05 0.145 0.145" material="color: gray"></a-entity>
+    <a-entity id="doorClose" class="clickable" cursor-listener position="22.15 1 -9.48" geometry="primitive: box" scale="0.05 0.145 0.145" material="color: gray"></a-entity>
+    <a-entity id="Elevator"  position="22.1 1 -8.91" geometry="primitive: box" scale="0.05 4 1" material="color: steelgray"></a-entity>
+
+
+
+
+</a-scene>
+</body>
+</html>
