@@ -20,5 +20,5 @@
     + Floor buttons align horizontally => not follow the design convention
     + No spatial relationship between floor number and the actual floor => not follow the design convention
     + No indicator to show the current floor we are in => want to floor 4, elevator is still in floor 3, door opens, I think I'm in 4th floor
-    + Don't know when the door will be closing
-    + No estimated time of arrival to the desire floor
+    + Don't know when the door will be closing => this happens a lot, hit the close button and wait for 3 minutes, door not closes due to internal problem.
+    + No estimated time of arrival to the desire floor (optional). => it's better to know how much time we reach the destination so we can better plan our moving time.
