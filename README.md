@@ -1,2 +1,2 @@
 # Elevator
-![](elevator.gif | width=100)
+![](elevator.gif = 80x200)
