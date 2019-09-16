@@ -1,2 +1,2 @@
 # Elevator
-![](elevator.gif = 80x200)
+![](elevator.gif){:height="36px" width="36px"}
