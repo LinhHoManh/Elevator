@@ -57,3 +57,11 @@
 - [x] You can use any tools you want including Processing, javascript, or even power point => Virtual Reality using A-Frame
 
 
+## Implementation Design
+
+- Framework for Virtual Reality using A-Frame (https://aframe.io/)
+- Room model : https://jujunjun110.github.io/aframe-crawling-cursor/basic/
+- Elevator model: Customize the room model with Blender3D software (https://www.blender.org/)
+- User interface design: Microsoft Power Point
+- Convert User Interface Design to A-Frame component
+- Interaction: fuse and gaze
