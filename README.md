@@ -39,3 +39,7 @@
     + Get out of the elevator before/after my desired destination. When the elevator is moving I usually talk to people or use my phone.
 - [x] Suggest the improvements to make on the control interface. Sketch your solution. And justify your design decisions.
     + The problem is feedback. I suggest to improve the feedback to users such as: notify users whether the door is closing or opening; notify users whether a desired floor is reached; time estimation for each floor
+
+## Now, imagine that you can have a touch screen on the elevator. To get a A, you need to:
+- [x] Come with your design for the touch screen? What is the screen size that you want?
+    + Vertical touch screen (visual mapping with the building in terms of height) with screensize 30x50 cm
