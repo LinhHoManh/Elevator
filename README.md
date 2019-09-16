@@ -1,6 +1,6 @@
 # Elevator
 
- [Demo link!](http://google.com)
+ [Demo link](https://alex-nguyen.github.io/Elevator/.)
 
 ## To get a C, you need to:
 ### Elevator showcase from Electrical Engineering Center
