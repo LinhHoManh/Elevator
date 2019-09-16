@@ -46,13 +46,17 @@
 
 ## Now, imagine that you can have a touch screen on the elevator. To get a A, you need to:
 - [x] Come with your design for the touch screen? What is the screen size that you want?
-    + Vertical touch screen (visual mapping with the building in terms of height) with screensize 30x50 cm (below)
+   + Vertical touch screen (visual mapping with the building in terms of height) with screensize 30x50 cm (below)
     
 <p align="center">
 <img src="https://github.com/Alex-Nguyen/Elevator/blob/master/controlPanel.png" width="200px">
 </p>
 
 - [x] Design and implement interactive features (see demo) link
+  + Avatar (human) shows that users are at the 2nd floor
+  + Three buttons (bottom)  supports emergency and disability person
+  + Help button assist users find out the departments
+  + Home button returns to the main screen
 - [x] Design and implement user feedback (see demo) link
 - [x] You can use any tools you want including Processing, javascript, or even power point => Virtual Reality using A-Frame
 
