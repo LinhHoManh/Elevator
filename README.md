@@ -2,7 +2,7 @@
 
  [Demo link](https://alex-nguyen.github.io/Elevator/.)
 
-[![IMAGE ALT TEXT HERE](https://i9.ytimg.com/vi/NaHVUVD0pZU/mq2.jpg?sqp=CPWbgOwF&rs=AOn4CLC-sLwnQ269qlkAO43x4X3OtcM2lQ)](https://www.youtube.com/watch?v=NaHVUVD0pZU)
+[![IMAGE ALT TEXT HERE](youtube.png)](https://www.youtube.com/watch?v=NaHVUVD0pZU)
 
 ## To get a C, you need to:
 ### Elevator showcase from Electrical Engineering Center
