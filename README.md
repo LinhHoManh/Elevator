@@ -57,6 +57,9 @@
   + Three buttons (bottom)  supports emergency and disability person
   + Help button assist users find out the departments
   + Home button returns to the main screen
+  + Once a desired floor is pressed, yellow background confirms that action. Press again to clear
+  + Audio feedback allows users to know when the door is closing/openning, which floor is reached
+  + Text on top of the screen allows users to see the feedback visually (or for hearing impaired people)
 - [x] Design and implement user feedback (see demo) link
 - [x] You can use any tools you want including Processing, javascript, or even power point => Virtual Reality using A-Frame
 
