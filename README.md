@@ -43,3 +43,7 @@
 ## Now, imagine that you can have a touch screen on the elevator. To get a A, you need to:
 - [x] Come with your design for the touch screen? What is the screen size that you want?
     + Vertical touch screen (visual mapping with the building in terms of height) with screensize 30x50 cm
+    
+<p align="center">
+<img src="https://github.com/Alex-Nguyen/Elevator/blob/master/controlPanel.png" width="200px">
+</p>
