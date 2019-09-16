@@ -8,7 +8,7 @@
 ### Elevator showcase from Electrical Engineering Center
 - [x] Find an elevator in the apartment/campus/hotel. Only one example for each student (below)
 <p align="center">
-<img src="https://github.com/Alex-Nguyen/Elevator/blob/master/lift.gif" width="200px">
+<img src="https://github.com/Alex-Nguyen/Elevator/blob/master/elevator.gif" width="200px">
 </p>
 
 - [x] Take photos of the control interface (above)
