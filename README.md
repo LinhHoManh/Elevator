@@ -51,6 +51,7 @@
 <p align="center">
 <img src="https://github.com/Alex-Nguyen/Elevator/blob/master/controlPanel.png" width="200px">
 </p>
+
 - [x] Design and implement interactive features (see demo) link
 - [x] Design and implement user feedback (see demo) link
 - [x] You can use any tools you want including Processing, javascript, or even power point => Virtual Reality using A-Frame
