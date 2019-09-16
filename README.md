@@ -9,5 +9,16 @@
 - [x] Take photos of the control interface (above)
 - [x] Show a gif image of the control interface in operation (above).
 - [x] Find the issues with the current design.
-    + Issues includes: 
-- [ ] Open a pull request
+    + Door automatically closes without warning users
+    + Floor buttons align horizontally
+    + No spatial relationship between floor number and the actual floor
+    + No indicator to show the current floor we are in
+    + Don't know when the door will be closing
+    + No estimated time of arrival to the desire floor
+- [ ] Explain why it is bad
+    + Door automatically closes without warning users => unaware users may face problem (e.g., dropping coffee)
+    + Floor buttons align horizontally => not follow the design convention
+    + No spatial relationship between floor number and the actual floor => not follow the design convention
+    + No indicator to show the current floor we are in => want to floor 4, elevator is still in floor 3, door opens, I think I'm in 4th floor
+    + Don't know when the door will be closing
+    + No estimated time of arrival to the desire floor
