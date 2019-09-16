@@ -9,4 +9,5 @@
 - [x] Take photos of the control interface (above)
 - [x] Show a gif image of the control interface in operation (above).
 - [x] Find the issues with the current design.
+    + Issues includes: 
 - [ ] Open a pull request
