@@ -26,3 +26,10 @@
 
 ## To get a B, you need to:
 - [x] Think about the common things that you use an elevator. List your most common uses and other more rare uses. Does the interface make doing those common things easier?
+    + Common things: Hit the desired floor button many times (to make sure that the button is pressed); Press the close door many time with expect that the door will close faster
+    + Rare uses: Emergency buttons (Call operator, fire alarm)
+- [x] Think about how the user interacts with the elevator. What is the common sequence of actions?
+    + Hit the desired floor/door close many times. Nothing change in terms of operation
+- [x] How does the elevator support the user figure out how to make it work?
+    + Light on the button indicates that the corresponding floor is pressed
+    + Sound is played once the elevator reached a floor (only to notify users)
