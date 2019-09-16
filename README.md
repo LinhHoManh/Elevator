@@ -1,5 +1,7 @@
 # Elevator
 
+ [Demo link!](http://google.com)
+
 ## To get a C, you need to:
 ### Elevator showcase from Electrical Engineering Center
 - [x] Find an elevator in the apartment/campus/hotel. Only one example for each student (below)
