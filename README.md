@@ -31,5 +31,9 @@
 - [x] Think about how the user interacts with the elevator. What is the common sequence of actions?
     + Hit the desired floor/door close many times. Nothing change in terms of operation
 - [x] How does the elevator support the user figure out how to make it work?
+    + with signifiers (floor numbers for each floor, star indicates ground or 1st floor, rounded or rectangle buttons for pressing)
+- [x] How does the elevator provide feedback to the user?
     + Light on the button indicates that the corresponding floor is pressed
     + Sound is played once the elevator reached a floor (only to notify users)
+- [x] What are some common mistakes you can make with this current design?
+    + Get out of the elevator before/after my desired destination. When the elevator is moving I usually talk to people or use my phone.
