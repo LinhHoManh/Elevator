@@ -15,7 +15,7 @@
     + No indicator to show the current floor we are in
     + Don't know when the door will be closing
     + No estimated time of arrival to the desire floor
-- [ ] Explain why it is bad
+- [x] Explain why it is bad
     + Door automatically closes without warning users => unaware users may face problem (e.g., dropping coffee)
     + Floor buttons align horizontally => not follow the design convention
     + No spatial relationship between floor number and the actual floor => not follow the design convention
