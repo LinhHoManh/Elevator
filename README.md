@@ -1,6 +1,6 @@
 # Elevator
 
- [Demo link](https://alex-nguyen.github.io/Elevator/.)
+ [Demo link](https://alex-nguyen.github.io/Elevator/demo.html)
 
 [![IMAGE ALT TEXT HERE](youtube.png)](https://www.youtube.com/watch?v=NaHVUVD0pZU)
 
