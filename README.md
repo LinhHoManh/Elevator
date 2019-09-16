@@ -37,3 +37,5 @@
     + Sound is played once the elevator reached a floor (only to notify users)
 - [x] What are some common mistakes you can make with this current design?
     + Get out of the elevator before/after my desired destination. When the elevator is moving I usually talk to people or use my phone.
+- [x] Suggest the improvements to make on the control interface. Sketch your solution. And justify your design decisions.
+    + The problem is feedback. I suggest to improve the feedback to users such as: notify users whether the door is closing or opening; notify users whether a desired floor is reached; time estimation for each floor
